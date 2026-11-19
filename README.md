@@ -1,6 +1,5 @@
-# Sehhati · صحتي
-
-**"My health"**: a mobile-first women's health companion, built as a hackathon prototype for the
+# Anajia · 
+**"The survivor"**: a mobile-first women's health companion, built as a hackathon prototype for the
 Future Health Digital Innovation Challenge (fertility / population health / wellbeing).
 
 Sehhati helps women understand symptoms faster instead of living through years of trial and error:
