@@ -2,7 +2,7 @@
 **"The survivor"**: a mobile-first women's health companion, built as a hackathon prototype for the
 Future Health Digital Innovation Challenge (fertility / population health / wellbeing).
 
-Sehhati helps women understand symptoms faster instead of living through years of trial and error:
+Anajia helps women understand symptoms faster instead of living through years of trial and error:
 
 1. **Log** symptoms in three taps (body map, symptom chips, 0–10 intensity).
 2. **Insights**: a transparent, rule-based engine shows "patterns commonly associated with…",
@@ -13,7 +13,7 @@ Sehhati helps women understand symptoms faster instead of living through years o
 
 Languages: French (default), Arabic (full RTL), English. Target: women in Morocco / MENA.
 
-> **Sehhati never diagnoses and never prescribes.** It is a prototype, not a medical device.
+> **Anajia never diagnoses and never prescribes.** It is a prototype, not a medical device.
 > All medical statements in it are **unverified** (see [What must be verified](#what-must-be-verified-before-any-real-use)).
 
 
@@ -29,7 +29,7 @@ No backend, no build step, no dependencies.
 **Option B: local server** (needed if you want the app to read the JSON files live while you edit them):
 
 ```bash
-cd Sehhati
+cd Anajia
 python -m http.server 8000
 # then open http://localhost:8000
 ```
@@ -61,7 +61,7 @@ file directly is not affected.
 ## Structure
 
 ```
-Sehhati/
+Anajia/
 ├── index.html              App shell (top bar, view, tab bar, overlays)
 ├── styles.css              All styles: palette, components, RTL, print layout
 ├── app.js                  Logic: state, scoring engine, personas, views, modals, events
@@ -88,7 +88,7 @@ After editing either JSON file, run `python tools/sync_data.py` so both modes st
 The script also validates the knowledge base (unknown symptom ids, missing translations,
 weights outside 1–3, evidence without a `verified` field…).
 
-**User data** lives only in `localStorage` under the key `sehhati.v1` (profile, logs, moods,
+**User data** lives only in `localStorage` under the key `Anajia.v1` (profile, logs, moods,
 "helped me too" marks, own community cards, doctor checklist, settings). Nothing is sent anywhere.
 *Settings → Supprimer toutes mes données* removes the key.
 
@@ -97,7 +97,7 @@ weights outside 1–3, evidence without a `verified` field…).
 ## How the scoring works
 
 The engine is in `app.js`, section 4 (`Engine`), and is also exposed in the browser console as
-`Sehhati.Engine`. It uses no machine learning: only the rules below, which the app shows to the
+`Anajia.Engine`. It uses no machine learning: only the rules below, which the app shows to the
 user in the "How it works" modal.
 
 - Analysis window: the last **120 days** of logs (`meta.scoring.windowDays`).
