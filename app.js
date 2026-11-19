@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sehhati (صحتي) — women's health companion · hackathon prototype
+   Anajia (صحتي) — women's health companion · hackathon prototype
    Vanilla JS, no build step, no backend. Everything stays in localStorage.
 
    1 helpers & i18n   2 state        3 dates        4 scoring engine
@@ -13,8 +13,9 @@
   'use strict';
 
   /* ------------------------------------------------------------------ 1 */
-  const I18N = window.SEHHATI_I18N || {};
-  const STORE_KEY = 'sehhati.v1';
+  const I18N = window.ANAJIA_I18N || {};
+  const STORE_KEY = 'anajia.v1';
+  const LEGACY_STORE_KEY = 'sehhati.v1';
   const LOCALES = { fr: 'fr-FR', ar: 'ar-MA', en: 'en-GB' };
   const LANG_NAMES = { fr: 'Français', ar: 'العربية', en: 'English' };
   const LANG_SHORT = { fr: 'FR', ar: 'ع', en: 'EN' };
@@ -75,12 +76,19 @@
     const base = defaultState();
     try {
       const raw = localStorage.getItem(STORE_KEY);
-      if (!raw) return base;
-      const saved = JSON.parse(raw);
+      const legacyRaw = raw ? null : localStorage.getItem(LEGACY_STORE_KEY);
+      if (!raw && !legacyRaw) return base;
+      const saved = JSON.parse(raw || legacyRaw);
       for (const k of Object.keys(base)) {
         if (saved[k] === undefined) continue;
         if (base[k] && typeof base[k] === 'object' && !Array.isArray(base[k])) Object.assign(base[k], saved[k]);
         else base[k] = saved[k];
+      }
+      if (legacyRaw) {
+        try {
+          localStorage.setItem(STORE_KEY, JSON.stringify(base));
+          localStorage.removeItem(LEGACY_STORE_KEY);
+        } catch (e) { /* keep using the legacy data when migration is unavailable */ }
       }
     } catch (e) { /* corrupted or unavailable storage: start fresh */ }
     return base;
@@ -118,7 +126,7 @@
   }
 
   /* ------------------------------------------------------------------ 4
-     Scoring engine — pure functions, no DOM. Exposed as window.Sehhati.Engine
+     Scoring engine — pure functions, no DOM. Exposed as window.Anajia.Engine
      so it can be tested from the console.
 
      points(symptom) = weight × (floor + (1 − floor) × avgIntensity / 10)
@@ -464,9 +472,9 @@
 
   function topbar() {
     return `
-      <button class="brand" data-action="go" data-view="home" aria-label="Sehhati">
+      <button class="brand" data-action="go" data-view="home" aria-label="Anajia">
         <span class="brand-logo">${mascot('good')}</span>
-        <span class="brand-name">Sehhati <span class="brand-ar" lang="ar">صحتي</span></span>
+        <span class="brand-name">Anajia <span class="brand-ar" lang="ar">صحتي</span></span>
       </button>
       <div class="topbar-actions">
         <div class="lang-switch" role="group" aria-label="${esc(t('common.language'))}">
@@ -1296,7 +1304,7 @@
         <h3 class="sheet-h">🔒 ${t('set.data')}</h3>
         <p class="muted small">${t('set.local')}</p>
         <button class="btn btn-danger btn-block" data-action="open-modal" data-modal="confirm-delete">${t('set.delete')}</button>
-        <p class="fineprint">${t('set.about')}<br>Sehhati v${esc(KB.meta.version)}</p>` };
+        <p class="fineprint">${t('set.about')}<br>Anajia v${esc(KB.meta.version)}</p>` };
     },
 
     demo() {
@@ -1402,7 +1410,7 @@
     root.innerHTML = m.raw
       ? `<div class="overlay ${m.cls || ''}" data-modal="${ui.modal.name}">${m.body}</div>`
       : `<div class="overlay ${m.cls || ''} ${sameModal ? 'still' : ''}" data-modal="${ui.modal.name}" data-action="backdrop">
-          <div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(m.title || 'Sehhati')}">
+          <div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(m.title || 'Anajia')}">
             <div class="sheet-head"><h2>${m.title || ''}</h2>
               <button class="icon-btn" data-action="close-modal" aria-label="${esc(t('common.close'))}">${icon('close')}</button></div>
             <div class="sheet-body">${m.body}</div>
@@ -1649,7 +1657,10 @@
 
     'delete-all'() {
       const keepLang = state.profile.lang;
-      try { localStorage.removeItem(STORE_KEY); } catch (e) { /* ignore */ }
+      try {
+        localStorage.removeItem(STORE_KEY);
+        localStorage.removeItem(LEGACY_STORE_KEY);
+      } catch (e) { /* ignore */ }
       state = defaultState();
       state.profile.lang = keepLang;
       ui.log = null; ui.open = {}; ui.modal = null;
@@ -1741,7 +1752,7 @@
 
   /* ------------------------------------------------------------------ 10 */
   async function loadData() {
-    const embedded = window.SEHHATI_DATA || null;
+    const embedded = window.ANAJIA_DATA || null;
     if (location.protocol !== 'file:') {
       try {
         const [k, c] = await Promise.all([
@@ -1775,12 +1786,12 @@
   }
 
   // Small surface for console testing and automated checks.
-  window.Sehhati = {
+  window.Anajia = {
     Engine, PERSONAS, buildPersona, loadPersona, go,
     get state() { return state; },
     get kb() { return KB; },
     get community() { return COMMUNITY; },
     ready: null
   };
-  window.Sehhati.ready = boot();
+  window.Anajia.ready = boot();
 })();

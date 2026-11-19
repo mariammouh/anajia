@@ -1,4 +1,4 @@
-/* Sehhati end-to-end check — drives the real app in headless Chrome/Edge over the
+/* Anajia end-to-end check — drives the real app in headless Chrome/Edge over the
    DevTools protocol. No dependencies: needs Node 22+ and Python 3 (for the static server).
 
      node tests/e2e.mjs [outputDir]
@@ -13,7 +13,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const OUT = path.resolve(process.argv[2] || path.join(tmpdir(), 'sehhati-e2e'));
+const OUT = path.resolve(process.argv[2] || path.join(tmpdir(), 'anajia-e2e'));
 const PORT = 8765, DEBUG_PORT = 9333;
 const BASE = `http://127.0.0.1:${PORT}/index.html`;
 mkdirSync(OUT, { recursive: true });
@@ -113,7 +113,7 @@ try {
       await send('Page.navigate', { url });
       for (let i = 0; i < 60; i++) {
         await sleep(100);
-        try { if (await ev(`location.href.split('#')[0] === ${JSON.stringify(url.split('#')[0])} && !!(window.Sehhati && window.Sehhati.kb)`)) return; } catch { /* navigating */ }
+        try { if (await ev(`location.href.split('#')[0] === ${JSON.stringify(url.split('#')[0])} && !!(window.Anajia && window.Anajia.kb)`)) return; } catch { /* navigating */ }
       }
       console.log(`  (boot attempt ${attempt} timed out, retrying)`);
       consoleErrors.length = serverHiccups(consoleErrors);
@@ -140,7 +140,7 @@ try {
   /* ---------------- 1. first run + onboarding ---------------- */
   console.log('\n# Onboarding');
   await goto(BASE);
-  check('boots over http and reads the JSON files', await ev('Sehhati.kb.conditions.length === 3 && Sehhati.community.cards.length'), await ev('Sehhati.community.cards.length') + ' community cards');
+  check('boots over http and reads the JSON files', await ev('Anajia.kb.conditions.length === 3 && Anajia.community.cards.length'), await ev('Anajia.community.cards.length') + ' community cards');
   check('onboarding shown on first run, French by default', await ev('document.querySelector("#app").dataset.view === "onboarding" && document.documentElement.lang === "fr"'));
   check('no horizontal overflow at 360px (onboarding)', (await overflow()) <= 0, await overflow());
   await shot('01-onboarding-welcome');
@@ -153,17 +153,17 @@ try {
   await setInput('[data-input="onb-len"]', '29');
   await shot('03-onboarding-cycle');
   await click('[data-action="onb-finish"]');
-  check('onboarding completes to Home', await ev('Sehhati.state.profile.onboarded && document.querySelector("#app").dataset.view === "home"'));
-  check('nickname and cycle saved', await ev('Sehhati.state.profile.nickname === "Yasmine" && Sehhati.state.profile.cycleLength === 29 && Sehhati.state.profile.periodStarts.length === 1'));
+  check('onboarding completes to Home', await ev('Anajia.state.profile.onboarded && document.querySelector("#app").dataset.view === "home"'));
+  check('nickname and cycle saved', await ev('Anajia.state.profile.nickname === "Yasmine" && Anajia.state.profile.cycleLength === 29 && Anajia.state.profile.periodStarts.length === 1'));
   check('home greets by nickname and shows cycle day 11', (await text('.bubble h1')).includes('Yasmine') && (await text('.ring-center strong')) === '11', await text('.ring-center strong'));
-  check('data persisted in localStorage', await ev('JSON.parse(localStorage.getItem("sehhati.v1")).profile.nickname === "Yasmine"'));
+  check('data persisted in localStorage', await ev('JSON.parse(localStorage.getItem("anajia.v1")).profile.nickname === "Yasmine"'));
 
   /* ---------------- 2. mood + mascot ---------------- */
   console.log('\n# Home');
   await click('[data-action="set-mood"][data-mood="rough"]');
   check('mascot reacts to mood', await count('.hero .mascot--rough') === 1);
   await click('[data-action="set-mood"][data-mood="great"]');
-  check('mood stored for today', await ev('Object.values(Sehhati.state.moods)[0] === "great"') && await count('.hero .mascot--great') === 1);
+  check('mood stored for today', await ev('Object.values(Anajia.state.moods)[0] === "great"') && await count('.hero .mascot--great') === 1);
   await shot('04-home-new-user');
 
   /* ---------------- 3. log in 3 taps ---------------- */
@@ -171,7 +171,7 @@ try {
   await click('.tab[data-view="log"]');                                   // tap 1
   await click('.chip[data-action="toggle-symptom"][data-id="cramps"]');   // tap 2
   await click('[data-action="save-log"]');                                // tap 3
-  check('logged in 3 taps (tab → chip → save)', await ev('(() => { const l = Sehhati.state.logs; return l.length === 1 && l[0].symptoms.cramps === 5; })()'));
+  check('logged in 3 taps (tab → chip → save)', await ev('(() => { const l = Anajia.state.logs; return l.length === 1 && l[0].symptoms.cramps === 5; })()'));
   check('"saved" celebration shown, no urgent screen', await count('.overlay.celebrate') === 1 && await count('.overlay.urgent') === 0);
   await shot('05-log-saved', false);
   await click('[data-action="close-modal"]');
@@ -187,7 +187,7 @@ try {
   check('zone badges count selected symptoms (belly 1, pelvis 2)', badges === '1,2', badges);
   await shot('06-log-bodymap');
   await click('[data-action="save-log"]');
-  check('same-day entry is updated, not duplicated', await ev('Sehhati.state.logs.length === 1 && Sehhati.state.logs[0].symptoms.cramps === 9'));
+  check('same-day entry is updated, not duplicated', await ev('Anajia.state.logs.length === 1 && Anajia.state.logs[0].symptoms.cramps === 9'));
   await click('[data-action="close-modal"]');
 
   /* ---------------- 4. red flags ---------------- */
@@ -195,7 +195,7 @@ try {
   const flagCase = async (label, ids, expectUrgent) => {
     await click('.tab[data-view="home"]');
     await click('.tab[data-view="log"]');
-    await ev('(() => { Sehhati.state.logs.length = 0; return 1; })()');
+    await ev('(() => { Anajia.state.logs.length = 0; return 1; })()');
     await click('.tab[data-view="home"]'); await click('.tab[data-view="log"]');
     await click('[data-action="category"][data-id="all"]');
     for (const id of ids) await click(`.chip[data-action="toggle-symptom"][data-id="${id}"]`);
@@ -220,16 +220,16 @@ try {
 
   /* ---------------- 5. the three personas ---------------- */
   console.log('\n# Demo personas');
-  const personas = await ev('Sehhati.PERSONAS.map(p => ({ id: p.id, condition: p.condition }))');
+  const personas = await ev('Anajia.PERSONAS.map(p => ({ id: p.id, condition: p.condition }))');
   for (const p of personas) {
     console.log(`\n## ${p.id} (${p.condition})`);
-    await ev(`Sehhati.loadPersona(${JSON.stringify(p.id)})`);
-    const scores = await ev('(() => { const S = Sehhati; return S.Engine.scoreAll(S.Engine.windowLogs(S.state.logs, S.kb), S.state.profile, S.kb).map(r => ({ id: r.id, pct: Math.round(r.ratio * 100), level: r.level, pts: Math.round(r.points * 10) / 10, max: r.max, rules: r.rules.filter(x => x.matched).map(x => x.rule.id) })); })()');
+    await ev(`Anajia.loadPersona(${JSON.stringify(p.id)})`);
+    const scores = await ev('(() => { const S = Anajia; return S.Engine.scoreAll(S.Engine.windowLogs(S.state.logs, S.kb), S.state.profile, S.kb).map(r => ({ id: r.id, pct: Math.round(r.ratio * 100), level: r.level, pts: Math.round(r.points * 10) / 10, max: r.max, rules: r.rules.filter(x => x.matched).map(x => x.rule.id) })); })()');
     check(`${p.id}: top pattern is ${p.condition} and "strong"`, scores[0].id === p.condition && scores[0].level === 'strong', scores.map(s => `${s.id} ${s.pct}% (${s.level})`).join(' | '));
     check(`${p.id}: clear gap to the second pattern`, scores[0].pct - scores[1].pct >= 20, `${scores[0].pct}% vs ${scores[1].pct}%`);
     check(`${p.id}: timing rules matched`, scores[0].rules.length >= 1, scores[0].rules.join(', '));
     check(`${p.id}: home shows cycle ring and demo banner`, await count('.ring-wrap') === 1 && await count('.demo-banner') === 1, 'day ' + await text('.ring-center strong'));
-    check(`${p.id}: no urgent flag in demo data`, await ev('Sehhati.state.logs.every(e => Sehhati.Engine.redFlags(e, Sehhati.kb).every(f => f.level !== "urgent"))'));
+    check(`${p.id}: no urgent flag in demo data`, await ev('Anajia.state.logs.every(e => Anajia.Engine.redFlags(e, Anajia.kb).every(f => f.level !== "urgent"))'));
     if (p.id === 'imane') await shot('10-home-imane');
 
     await click('.tab[data-view="insights"]');
@@ -256,7 +256,7 @@ try {
 
   /* ---------------- 6. features on a persona ---------------- */
   console.log('\n# Features');
-  await ev('Sehhati.loadPersona("imane")');
+  await ev('Anajia.loadPersona("imane")');
 
   await click('.tab[data-view="log"]');
   check('log opens on a short first screen (pain category)', await count('.chips .chip[data-action="toggle-symptom"]') === 9);
@@ -291,7 +291,7 @@ try {
   await click('[data-action="com-filter"][data-key="result"][data-id="all"]');
   const before = Number(await text('.helped-btn b'));
   await click('.helped-btn');
-  check('"helped me too" increments and persists', Number(await text('.helped-btn b')) === before + 1 && await ev('Object.keys(Sehhati.state.community.helped).length === 1'));
+  check('"helped me too" increments and persists', Number(await text('.helped-btn b')) === before + 1 && await ev('Object.keys(Anajia.state.community.helped).length === 1'));
   await click('[data-action="com-filter"][data-key="condition"][data-id="all"]');
   await shot('15-community');
   await click('[data-action="open-share"]');
@@ -339,32 +339,35 @@ try {
     }
     check(`${lang}: direction set, all 5 views render, no overflow, no missing strings`, okDir && maxOverflow <= 0 && missing === 0, `dir ok=${okDir}, overflow=${maxOverflow}, missing keys=${missing}`);
   }
-  check('language choice persists', await ev('JSON.parse(localStorage.getItem("sehhati.v1")).profile.lang === "fr"'));
+  check('language choice persists', await ev('JSON.parse(localStorage.getItem("anajia.v1")).profile.lang === "fr"'));
 
   /* ---------------- 8. reload, delete, file:// ---------------- */
   console.log('\n# Persistence, delete, double-click mode');
   await goto(BASE + '#/insights');
-  check('state survives a reload (deep link to Insights)', await ev('Sehhati.state.profile.demo === "imane" && document.querySelector("#app").dataset.view === "insights"') && await count('.pattern') >= 1);
+  check('state survives a reload (deep link to Insights)', await ev('Anajia.state.profile.demo === "imane" && document.querySelector("#app").dataset.view === "insights"') && await count('.pattern') >= 1);
   await click('[data-action="open-modal"][data-modal="settings"]');
   await click('.sheet [data-action="open-modal"][data-modal="confirm-delete"]');
   await shot('16-confirm-delete', false);
   await click('[data-action="delete-all"]');
-  check('"Delete all my data" wipes localStorage and returns to onboarding', await ev('localStorage.getItem("sehhati.v1") === null && document.querySelector("#app").dataset.view === "onboarding" && Sehhati.state.logs.length === 0'));
+  check('"Delete all my data" wipes localStorage and returns to onboarding', await ev('localStorage.getItem("anajia.v1") === null && document.querySelector("#app").dataset.view === "onboarding" && Anajia.state.logs.length === 0'));
+  await ev('localStorage.setItem("sehhati.v1", JSON.stringify({ profile: { nickname: "Legacy" } }))');
+  await goto(BASE);
+  check('legacy user data migrates to the Anajia storage key', await ev('Anajia.state.profile.nickname === "Legacy" && localStorage.getItem("anajia.v1") !== null && localStorage.getItem("sehhati.v1") === null'));
 
   await goto(pathToFileURL(path.join(ROOT, 'index.html')).href);
-  check('opens by double-click (file://) using the embedded data bundle', await ev('location.protocol === "file:" && Sehhati.kb.conditions.length === 3 && Sehhati.community.cards.length === 18'));
+  check('opens by double-click (file://) using the embedded data bundle', await ev('location.protocol === "file:" && Anajia.kb.conditions.length === 3 && Anajia.community.cards.length === 18'));
   await click('[data-action="open-modal"][data-modal="demo"]');
   await shot('17-demo-picker', false);
   await click('[data-action="load-persona"][data-id="khadija"]');
   await click('.tab[data-view="insights"]');
   check('persona flow works from file://', (await text('.pattern .pattern-title h3')) === 'SOPK', await text('.pattern .pattern-pct'));
-  const fromBundle = await ev('JSON.stringify(window.SEHHATI_DATA)');
+  const fromBundle = await ev('JSON.stringify(window.ANAJIA_DATA)');
   const fromJson = JSON.stringify({
     knowledge: JSON.parse(readFileSync(path.join(ROOT, 'data/knowledge.json'), 'utf8')),
     community: JSON.parse(readFileSync(path.join(ROOT, 'data/community.json'), 'utf8'))
   });
   check('data.bundle.js is in sync with the JSON files', fromBundle === fromJson, fromBundle === fromJson ? undefined : 'run: python tools/sync_data.py');
-  check('every evidence item is flagged verified:false', await ev('Sehhati.kb.conditions.every(c => c.evidence.every(e => e.verified === false))'));
+  check('every evidence item is flagged verified:false', await ev('Anajia.kb.conditions.every(c => c.evidence.every(e => e.verified === false))'));
 
   await sleep(300);
   check('no console errors or uncaught exceptions during the whole run', consoleErrors.length === 0, consoleErrors.length ? consoleErrors : '0 errors');

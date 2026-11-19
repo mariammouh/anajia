@@ -1,14 +1,14 @@
-/* Sehhati — interface strings (FR default, AR, EN).
+/* Anajia — interface strings (FR default, AR, EN).
    Medical content lives in data/knowledge.json; only UI wording is here.
    Placeholders use {name} syntax. */
-window.SEHHATI_I18N = {
+window.ANAJIA_I18N = {
   fr: {
     'nav.home': 'Accueil', 'nav.log': 'Journal', 'nav.insights': 'Insights', 'nav.community': 'Communauté', 'nav.doctor': 'Médecin',
     'common.back': 'Retour', 'common.next': 'Suivant', 'common.close': 'Fermer', 'common.cancel': 'Annuler', 'common.all': 'Tout',
     'common.today': "Aujourd'hui", 'common.yesterday': 'Hier', 'common.anonymous': 'Anonyme', 'common.settings': 'Réglages', 'common.language': 'Langue',
     'common.loadError': "Impossible de charger les données. Lance un petit serveur local : python -m http.server",
 
-    'onb.welcome': 'Bienvenue sur Sehhati',
+    'onb.welcome': 'Bienvenue sur Anajia',
     'onb.welcomeSub': "Ta compagne santé : comprends tes symptômes plus vite, découvre ce que d'autres femmes ont essayé et prépare ton rendez-vous médical.",
     'onb.chooseLang': 'Choisis ta langue', 'onb.start': "C'est parti",
     'onb.nameTitle': "Comment veux-tu qu'on t'appelle ?", 'onb.nameSub': "Un surnom suffit. Pas de compte, pas d'e-mail.",
@@ -18,7 +18,7 @@ window.SEHHATI_I18N = {
     'onb.lastPeriod': 'Premier jour de tes dernières règles', 'onb.cycleLen': 'Durée habituelle de ton cycle (jours)',
     'onb.cycleLenHint': 'Du premier jour des règles au suivant. Laisse 28 si tu ne sais pas.',
     'onb.finish': 'Commencer', 'onb.tryDemo': 'Essayer avec un profil démo',
-    'onb.notMedical': 'Sehhati informe, mais ne pose pas de diagnostic et ne remplace pas un·e médecin.',
+    'onb.notMedical': 'Anajia informe, mais ne pose pas de diagnostic et ne remplace pas un·e médecin.',
 
     'home.hello': 'Coucou {name} !', 'home.helloAnon': 'Coucou toi !', 'home.moodQ': "Comment te sens-tu aujourd'hui ?",
     'mood.great': 'Au top', 'mood.good': 'Bien', 'mood.meh': 'Bof', 'mood.low': 'Triste', 'mood.rough': 'Dur dur',
@@ -48,7 +48,7 @@ window.SEHHATI_I18N = {
 
     'ins.title': 'Mes insights', 'ins.sub': '{n} jours de journal analysés', 'ins.how': 'Comment ça marche ?',
     'ins.notDx': "Ceci n'est pas un diagnostic",
-    'ins.notDxText': 'Sehhati repère des schémas dans ce que tu notes. Seul·e un·e professionnel·le de santé peut poser un diagnostic.',
+    'ins.notDxText': 'Anajia repère des schémas dans ce que tu notes. Seul·e un·e professionnel·le de santé peut poser un diagnostic.',
     'ins.empty': 'Pas encore assez de données', 'ins.emptySub': 'Note tes symptômes quelques jours, ou charge un profil démo pour voir un exemple.',
     'ins.loadDemo': 'Charger un profil démo', 'ins.top': 'Tes symptômes les plus fréquents', 'ins.daysCount': '{n} j', 'ins.avg': 'moy. {n}/10',
     'ins.patterns': 'Schémas souvent associés à…',
@@ -73,8 +73,8 @@ window.SEHHATI_I18N = {
     'doc.addQ': 'Ajouter', 'doc.addQPh': 'Écris ta propre question…', 'doc.exams': 'Examens à évoquer',
     'doc.examsHint': "À discuter : c'est ton médecin qui juge de leur utilité.", 'doc.timeline': 'Chronologie de mes symptômes',
     'doc.noLogs': 'Aucun journal pour le moment. Note tes symptômes pour construire ta chronologie.', 'doc.cycleDay': 'J{n}',
-    'doc.reportTitle': 'Sehhati · Résumé pour ma consultation', 'doc.preparedBy': 'Préparé par {name} le {date}',
-    'doc.footer': "Document généré par Sehhati à partir des notes de la patiente. Ce n'est pas un diagnostic médical.",
+    'doc.reportTitle': 'Anajia · Résumé pour ma consultation', 'doc.preparedBy': 'Préparé par {name} le {date}',
+    'doc.footer': "Document généré par Anajia à partir des notes de la patiente. Ce n'est pas un diagnostic médical.",
     'doc.entries': '{n} journaux', 'doc.pattern': 'Schémas repérés par l’application (indicatif)',
 
     'com.title': 'Communauté', 'com.sub': "Ce que d'autres femmes ont essayé", 'com.demo': 'Données de démonstration',
@@ -96,7 +96,7 @@ window.SEHHATI_I18N = {
     'urg.do': "Rends-toi aux urgences les plus proches ou appelle les secours. Ne conduis pas toi-même si tu te sens mal.",
     'urg.call141': 'Appeler le 141 (SAMU)', 'urg.call15': 'Appeler le 15',
     'urg.local': "Maroc : 141 (SAMU) ou 15 (Protection civile). Ailleurs : compose ton numéro d'urgence local.",
-    'urg.ok': "J'ai compris", 'urg.disclaimer': 'Sehhati ne pose pas de diagnostic. Dans le doute, mieux vaut consulter.',
+    'urg.ok': "J'ai compris", 'urg.disclaimer': 'Anajia ne pose pas de diagnostic. Dans le doute, mieux vaut consulter.',
     'urg.saved': 'Ton journal a bien été enregistré.', 'urg.supportTitle': "Tu n'es pas seule",
 
     'set.title': 'Réglages', 'set.profile': 'Mon profil', 'set.nickname': 'Surnom', 'set.cycle': 'Mon cycle',
@@ -107,10 +107,10 @@ window.SEHHATI_I18N = {
     'set.delete': 'Supprimer toutes mes données', 'set.deleteQ': 'Tout supprimer ?',
     'set.deleteText': 'Journal, profil, préférences : tout sera effacé de cet appareil. Cette action est irréversible.',
     'set.deleteYes': 'Oui, tout supprimer', 'set.deleted': 'Toutes tes données ont été supprimées',
-    'set.about': 'Sehhati est un prototype de hackathon. Il ne pose pas de diagnostic, ne prescrit rien et ne remplace pas un·e professionnel·le de santé.',
+    'set.about': 'Anajia est un prototype de hackathon. Il ne pose pas de diagnostic, ne prescrit rien et ne remplace pas un·e professionnel·le de santé.',
     'set.demoLoaded': 'Profil démo chargé : {name}', 'set.saved': 'Enregistré',
 
-    'how.title': 'Comment ça marche ?', 'how.intro': 'Pas de boîte noire : Sehhati applique des règles simples, que tu peux lire ici.',
+    'how.title': 'Comment ça marche ?', 'how.intro': 'Pas de boîte noire : Anajia applique des règles simples, que tu peux lire ici.',
     'how.s1t': 'Tu notes', 'how.s1': 'Tes symptômes, leur intensité de 0 à 10 et la date. On en déduit le jour de ton cycle.',
     'how.s2t': 'On compte des points',
     'how.s2': 'Chaque schéma a une liste de symptômes pondérés de 1 à 3. Un symptôme noté rapporte : poids × (0,5 + 0,5 × intensité moyenne ÷ 10). Léger, il compte pour moitié ; très intense, pour son poids entier.',
@@ -132,7 +132,7 @@ window.SEHHATI_I18N = {
     'common.today': 'Today', 'common.yesterday': 'Yesterday', 'common.anonymous': 'Anonymous', 'common.settings': 'Settings', 'common.language': 'Language',
     'common.loadError': 'Could not load the data. Start a small local server: python -m http.server',
 
-    'onb.welcome': 'Welcome to Sehhati',
+    'onb.welcome': 'Welcome to Anajia',
     'onb.welcomeSub': 'Your health companion: understand your symptoms faster, see what other women tried, and prepare your doctor visit.',
     'onb.chooseLang': 'Choose your language', 'onb.start': "Let's go",
     'onb.nameTitle': 'What should we call you?', 'onb.nameSub': 'A nickname is enough. No account, no email.',
@@ -142,7 +142,7 @@ window.SEHHATI_I18N = {
     'onb.lastPeriod': 'First day of your last period', 'onb.cycleLen': 'Usual cycle length (days)',
     'onb.cycleLenHint': 'From the first day of one period to the next. Leave 28 if unsure.',
     'onb.finish': 'Start', 'onb.tryDemo': 'Try a demo profile',
-    'onb.notMedical': 'Sehhati informs, but does not diagnose and does not replace a doctor.',
+    'onb.notMedical': 'Anajia informs, but does not diagnose and does not replace a doctor.',
 
     'home.hello': 'Hi {name}!', 'home.helloAnon': 'Hi there!', 'home.moodQ': 'How are you feeling today?',
     'mood.great': 'Great', 'mood.good': 'Good', 'mood.meh': 'Meh', 'mood.low': 'Sad', 'mood.rough': 'Rough',
@@ -172,7 +172,7 @@ window.SEHHATI_I18N = {
 
     'ins.title': 'My insights', 'ins.sub': '{n} logged days analysed', 'ins.how': 'How does it work?',
     'ins.notDx': 'This is not a diagnosis',
-    'ins.notDxText': 'Sehhati spots patterns in what you log. Only a health professional can make a diagnosis.',
+    'ins.notDxText': 'Anajia spots patterns in what you log. Only a health professional can make a diagnosis.',
     'ins.empty': 'Not enough data yet', 'ins.emptySub': 'Log your symptoms for a few days, or load a demo profile to see an example.',
     'ins.loadDemo': 'Load a demo profile', 'ins.top': 'Your most frequent symptoms', 'ins.daysCount': '{n} d', 'ins.avg': 'avg {n}/10',
     'ins.patterns': 'Patterns commonly associated with…',
@@ -197,8 +197,8 @@ window.SEHHATI_I18N = {
     'doc.addQ': 'Add', 'doc.addQPh': 'Write your own question…', 'doc.exams': 'Exams to discuss',
     'doc.examsHint': 'To discuss: your doctor decides whether they are useful.', 'doc.timeline': 'My symptom timeline',
     'doc.noLogs': 'No entries yet. Log your symptoms to build your timeline.', 'doc.cycleDay': 'D{n}',
-    'doc.reportTitle': 'Sehhati · Summary for my appointment', 'doc.preparedBy': 'Prepared by {name} on {date}',
-    'doc.footer': 'Document generated by Sehhati from the patient’s own notes. This is not a medical diagnosis.',
+    'doc.reportTitle': 'Anajia · Summary for my appointment', 'doc.preparedBy': 'Prepared by {name} on {date}',
+    'doc.footer': 'Document generated by Anajia from the patient’s own notes. This is not a medical diagnosis.',
     'doc.entries': '{n} entries', 'doc.pattern': 'Patterns spotted by the app (indicative)',
 
     'com.title': 'Community', 'com.sub': 'What other women have tried', 'com.demo': 'Demo data',
@@ -220,7 +220,7 @@ window.SEHHATI_I18N = {
     'urg.do': 'Go to the nearest emergency department or call emergency services. Do not drive yourself if you feel unwell.',
     'urg.call141': 'Call 141 (SAMU)', 'urg.call15': 'Call 15',
     'urg.local': 'Morocco: 141 (SAMU) or 15 (Civil Protection). Elsewhere: dial your local emergency number.',
-    'urg.ok': 'I understand', 'urg.disclaimer': 'Sehhati does not diagnose. When in doubt, get checked.',
+    'urg.ok': 'I understand', 'urg.disclaimer': 'Anajia does not diagnose. When in doubt, get checked.',
     'urg.saved': 'Your entry has been saved.', 'urg.supportTitle': 'You are not alone',
 
     'set.title': 'Settings', 'set.profile': 'My profile', 'set.nickname': 'Nickname', 'set.cycle': 'My cycle',
@@ -231,10 +231,10 @@ window.SEHHATI_I18N = {
     'set.delete': 'Delete all my data', 'set.deleteQ': 'Delete everything?',
     'set.deleteText': 'Log, profile, preferences: everything will be erased from this device. This cannot be undone.',
     'set.deleteYes': 'Yes, delete everything', 'set.deleted': 'All your data has been deleted',
-    'set.about': 'Sehhati is a hackathon prototype. It does not diagnose, does not prescribe and does not replace a health professional.',
+    'set.about': 'Anajia is a hackathon prototype. It does not diagnose, does not prescribe and does not replace a health professional.',
     'set.demoLoaded': 'Demo profile loaded: {name}', 'set.saved': 'Saved',
 
-    'how.title': 'How does it work?', 'how.intro': 'No black box: Sehhati applies simple rules that you can read right here.',
+    'how.title': 'How does it work?', 'how.intro': 'No black box: Anajia applies simple rules that you can read right here.',
     'how.s1t': 'You log', 'how.s1': 'Your symptoms, their intensity from 0 to 10, and the date. From that we work out your cycle day.',
     'how.s2t': 'We count points',
     'how.s2': 'Each pattern has a list of symptoms weighted 1 to 3. A logged symptom earns: weight × (0.5 + 0.5 × average intensity ÷ 10). Mild counts for half; very intense counts for its full weight.',
@@ -376,7 +376,7 @@ window.SEHHATI_I18N = {
 };
 
 /* Prototype v2 strings: signs count, narrowing question, one-thing experiments, approved-list notes */
-Object.assign(window.SEHHATI_I18N.fr, {
+Object.assign(window.ANAJIA_I18N.fr, {
   'ins.signs': '{n} signes sur {m}', 'ins.qTitle': 'Une question pour affiner', 'ins.q': 'As-tu aussi : {s} ?',
   'ins.qYes': 'Oui', 'ins.qNo': 'Non',
   'ins.qNote': "« Oui » l'ajoute à ton journal d'aujourd'hui (5/10, modifiable). On choisit la question qui distingue le mieux les deux premiers schémas.",
@@ -392,7 +392,7 @@ Object.assign(window.SEHHATI_I18N.fr, {
   'com.notApproved': "Hors liste approuvée : affiché pour information, jamais recommandé par l'app.",
   'com.rankNote': "La communauté change l'ordre des pistes, jamais leur contenu : seules les pistes de la liste approuvée sont proposées."
 });
-Object.assign(window.SEHHATI_I18N.ar, {
+Object.assign(window.ANAJIA_I18N.ar, {
   'ins.signs': '{n} من {m} علامات', 'ins.qTitle': 'سؤال لتضييق الاحتمالات', 'ins.q': 'هل تعانين أيضاً من: {s}؟',
   'ins.qYes': 'نعم', 'ins.qNo': 'لا',
   'ins.qNote': 'الإجابة بـ «نعم» تضيفه إلى سجلك لهذا اليوم (5/10، يمكنك تعديله). نختار السؤال الذي يفرّق أكثر بين النمطين الأوّلين.',
@@ -408,7 +408,7 @@ Object.assign(window.SEHHATI_I18N.ar, {
   'com.notApproved': 'خارج القائمة المعتمدة: للاطلاع فقط، ولا يوصي به التطبيق أبداً.',
   'com.rankNote': 'المجتمع يغيّر ترتيب الاقتراحات لا محتواها: لا تُعرض إلا اقتراحات القائمة المعتمدة.'
 });
-Object.assign(window.SEHHATI_I18N.en, {
+Object.assign(window.ANAJIA_I18N.en, {
   'ins.signs': '{n} of {m} signs', 'ins.qTitle': 'One question to narrow things down', 'ins.q': 'Do you also have: {s}?',
   'ins.qYes': 'Yes', 'ins.qNo': 'No',
   'ins.qNote': '"Yes" adds it to today\'s journal (5/10, editable). We pick the question that best separates the top two patterns.',

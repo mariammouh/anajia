@@ -88,7 +88,7 @@ After editing either JSON file, run `python tools/sync_data.py` so both modes st
 The script also validates the knowledge base (unknown symptom ids, missing translations,
 weights outside 1–3, evidence without a `verified` field…).
 
-**User data** lives only in `localStorage` under the key `Anajia.v1` (profile, logs, moods,
+**User data** lives only in `localStorage` under the key `anajia.v1` (profile, logs, moods,
 "helped me too" marks, own community cards, doctor checklist, settings). Nothing is sent anywhere.
 *Settings → Supprimer toutes mes données* removes the key.
 
