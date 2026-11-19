@@ -16,21 +16,6 @@ Languages: French (default), Arabic (full RTL), English. Target: women in Morocc
 > **Sehhati never diagnoses and never prescribes.** It is a prototype, not a medical device.
 > All medical statements in it are **unverified** (see [What must be verified](#what-must-be-verified-before-any-real-use)).
 
----
-
-## What changed in v2 (small prototype fixes)
-
-No LLM, no backend, still one folder you can double-click.
-
-1. **Signs instead of percentages.** Insights now say "11 of 12 signs" instead of "73%". The levels (strong / moderate / slight) still come from the same untested rules, so the app no longer looks like it is giving a probability.
-2. **One question to narrow things down** (Insights). The app looks at the two leading patterns, finds the symptom that separates them best, and asks yes/no. "Yes" adds it to today's journal (5/10, editable); "No" is remembered and shown.
-3. **Try one thing at a time** (Insights, under "Sources, approaches and detail"). Each approved idea has a "Try for 2 weeks" button. Only one experiment can run at once. The app compares the tracked symptom before and after, then asks how it went. The result becomes a community card linked to that idea.
-4. **Community reorders, never adds.** Every approved idea now has an `id`, and community cards carry an optional `item` pointing to one. Ideas are sorted by how many women reported they helped. Cards that do not match an idea (prescription drugs, a restrictive social-media diet...) are shown with "Not on the approved list: for information only" and never feed the ranking or the recommendations.
-5. `tools/sync_data.py` now checks that every idea has an id and every card points to an existing idea.
-
-Still true from v1: all medical statements are **unverified** and the 18 community cards are **fictional**. The "helped" counts used for ranking are demo numbers.
-
-Checked in v2: `python tools/sync_data.py` passes, and `node tests/smoke_v2.cjs` (needs `npm install jsdom` first) runs the new features in a simulated browser. The v1 end-to-end suite (`tests/e2e.mjs`, headless Chrome) was **not re-run** after these changes.
 
 ---
 
