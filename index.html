@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FF5C8A">
+  <meta name="description" content="Sehhati (صحتي) — a women's health companion: understand symptoms, see what other women tried, prepare your doctor visit.">
+  <title>Sehhati · صحتي</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 24C92 24 104 48 104 68 104 94 84 108 60 108 36 108 16 94 16 68 16 48 28 24 60 24Z' fill='%23FF5C8A'/%3E%3Ccircle cx='46' cy='66' r='5' fill='%234A2C3A'/%3E%3Ccircle cx='74' cy='66' r='5' fill='%234A2C3A'/%3E%3Cpath d='M50 80Q60 88 70 80' stroke='%234A2C3A' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <!-- Fonts are progressive enhancement: the app works offline with system fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- media="print" + onload = non-blocking: a slow or blocked network never delays the app. -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Safety net: if a script failed to load (flaky network / dev server), offer a reload
+    // instead of leaving the loading screen forever.
+    setTimeout(function () {
+      if (window.Sehhati) return;
+      var p = document.querySelector('.boot p');
+      if (p) p.innerHTML = '<a href="" onclick="location.reload();return false">Recharger · Reload · إعادة التحميل</a>';
+    }, 9000);
+  </script>
+</head>
+<body>
+  <div id="app" class="app" data-view="boot">
+    <header id="topbar" class="topbar"></header>
+    <main id="view" class="view" tabindex="-1">
+      <div class="boot">
+        <div class="boot-dot"></div>
+        <p>Sehhati · صحتي</p>
+      </div>
+    </main>
+    <nav id="tabbar" class="tabbar" aria-label="Navigation"></nav>
+  </div>
+
+  <div id="overlay-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+  <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+  <noscript>
+    <p style="padding:24px;font-family:sans-serif">Sehhati a besoin de JavaScript pour fonctionner. · Sehhati needs JavaScript.</p>
+  </noscript>
+
+  <!-- Offline mirror of data/*.json so the app also works by double-click (file://).
+       When served over http(s), app.js reads the JSON files directly. -->
+  <script src="data/data.bundle.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+{
+  "meta": {
+    "demo": true,
+    "note": "DEMO DATA. Every card below is fictional and written for the hackathon prototype. None is a real testimony and none is medical advice."
+  },
+  "cards": [
+    {
+      "id": "c01",
+      "condition": "dysmenorrhea_pms",
+      "category": "lifestyle",
+      "result": "helped",
+      "age": "18-24",
+      "country": "MA",
+      "avatar": "🌸",
+      "helped": 48,
+      "tried": {
+        "fr": "Bouillotte chaude sur le ventre et étirements doux les deux premiers jours des règles",
+        "ar": "كمادة دافئة على البطن وتمارين تمدد خفيفة في اليومين الأولين من الدورة",
+        "en": "Hot water bottle on my belly and gentle stretching on the first two days of my period"
+      },
+      "duration": {
+        "fr": "6 cycles",
+        "ar": "6 دورات",
+        "en": "6 cycles"
+      },
+      "note": {
+        "fr": "Ma douleur passe de 8 à 5 environ. Ça ne règle pas tout, mais je tiens ma journée.",
+        "ar": "ينخفض ألمي من 8 إلى 5 تقريباً. لا يحل كل شيء، لكنني أكمل يومي.",
+        "en": "My pain goes from about 8 to 5. It does not fix everything, but I get through my day."
+      },
+      "sideEffects": {
+        "fr": "",
+        "ar": "",
+        "en": ""
+      },
+      "item": "dys_l0"
+    },
+    {
+      "id": "c02",
+      "condition": "dysmenorrhea_pms",
+      "category": "medical",
+      "result": "helped",
+      "age": "25-34",
+      "country": "MA",
+      "avatar": "🌷",
+      "helped": 63,
+      "tried": {
+        "fr": "Anti-inflammatoire conseillé par mon médecin, pris dès les premiers signes des règles",
+        "ar": "مضاد التهاب نصحني به طبيبي، أتناوله عند أولى علامات الدورة",
+        "en": "Anti-inflammatory advised by my doctor, taken at the first signs of my period"
+      },
+      "duration": {
+        "fr": "4 cycles",
+        "ar": "4 دورات",
+        "en": "4 cycles"
+      },
+      "note": {
+        "fr": "Le prendre tôt change tout pour moi. J'ai enfin arrêté de rater des cours.",
+        "ar": "تناوله مبكراً غيّر كل شيء عندي. توقفت أخيراً عن التغيب عن الدروس.",
+        "en": "Taking it early changes everything for me. I finally stopped missing classes."
+      },
+      "sideEffects": {
+        "fr": "Brûlures d'estomac si je le prends à jeun",
+        "ar": "حرقة في المعدة إذا تناولته على معدة فارغة",
+        "en": "Heartburn if I take it on an empty stomach"
+      },
+      "item": null
+    },
+    {
+      "id": "c03",
+      "condition": "dysmenorrhea_pms",
+      "category": "medical",
+      "result": "partly",
+      "age": "25-34",
+      "country": "TN",
+      "avatar": "🌺",
+      "helped": 31,
+      "tried": {
+        "fr": "Pilule contraceptive prescrite par ma gynécologue",
+        "ar": "حبوب منع الحمل وصفتها لي طبيبة النساء",
+        "en": "Contraceptive pill prescribed by my gynecologist"
+      },
+      "duration": {
+        "fr": "8 mois",
+        "ar": "8 أشهر",
+        "en": "8 months"
+      },
+      "note": {
+        "fr": "Beaucoup moins de crampes. Pour l'humeur avant les règles, c'est moins net.",
+        "ar": "تقلصات أقل بكثير. أما المزاج قبل الدورة فالتحسن أقل وضوحاً.",
+        "en": "Far fewer cramps. For my mood before periods, it is less clear."
+      },
+      "sideEffects": {
+        "fr": "Maux de tête et petits saignements les deux premiers mois",
+        "ar": "صداع ونزيف خفيف في الشهرين الأولين",
+        "en": "Headaches and light spotting in the first two months"
+      },
+      "item": null
+    },
+    {
+      "id": "c04",
+      "condition": "dysmenorrhea_pms",
+      "category": "complementary",
+      "result": "no_change",
+      "age": "18-24",
+      "country": "DZ",
+      "avatar": "🍵",
+      "helped": 12,
+      "tried": {
+        "fr": "Tisane de gingembre et cannelle, matin et soir pendant les règles",
+        "ar": "مشروب الزنجبيل والقرفة صباحاً ومساءً أثناء الدورة",
+        "en": "Ginger and cinnamon tea, morning and evening during my period"
+      },
+      "duration": {
+        "fr": "3 cycles",
+        "ar": "3 دورات",
+        "en": "3 cycles"
+      },
+      "note": {
+        "fr": "Agréable et réconfortant, mais aucun effet sur mes douleurs.",
+        "ar": "لذيذ ومريح، لكن دون أي أثر على آلامي.",
+        "en": "Pleasant and comforting, but no effect on my pain."
+      },
+      "sideEffects": {
+        "fr": "",
+        "ar": "",
+        "en": ""
+      },
+      "item": "dys_l4"
+    },
+    {
+      "id": "c05",
+      "condition": "dysmenorrhea_pms",
+      "category": "lifestyle",
+      "result": "helped",
+      "age": "25-34",
+      "country": "MA",
+      "avatar": "👟",
+      "helped": 39,
+      "tried": {
+        "fr": "Marche rapide 30 minutes par jour et moins de café la semaine avant les règles",
+        "ar": "مشي سريع 30 دقيقة يومياً وتقليل القهوة في الأسبوع الذي يسبق الدورة",
+        "en": "Brisk 30-minute walk every day and less coffee the week before my period"
+      },
+      "duration": {
+        "fr": "3 mois",
+        "ar": "3 أشهر",
+        "en": "3 months"
+      },
+      "note": {
+        "fr": "Moins d'irritabilité et je dors mieux. Les ballonnements sont toujours là.",
+        "ar": "عصبية أقل ونوم أفضل. الانتفاخ ما زال موجوداً.",
+        "en": "Less irritability and better sleep. The bloating is still there."
+      },
+      "sideEffects": {
+        "fr": "",
+        "ar": "",
+        "en": ""
+      },
+      "item": "dys_l1"
+    },
+    {
+      "id": "c06",
+      "condition": "dysmenorrhea_pms",
+      "category": "support",
+      "result": "helped",
+      "age": "35-44",
+      "country": "FR",
+      "avatar": "🫶",
+      "helped": 27,
+      "tried": {
+        "fr": "Séances de thérapie (TCC) avec une psychologue pour mes symptômes d'avant-règles",
+        "ar": "جلسات علاج معرفي سلوكي مع أخصائية نفسية لأعراض ما قبل الدورة",
+        "en": "Therapy sessions (CBT) with a psychologist for my premenstrual symptoms"
+      },
+      "duration": {
+        "fr": "4 mois",
+        "ar": "4 أشهر",
+        "en": "4 months"
+      },
+      "note": {
+        "fr": "Je repère la vague avant qu'elle arrive. Mon entourage voit la différence.",
+        "ar": "صرت أنتبه للموجة قبل وصولها. المقربون مني لاحظوا الفرق.",
+        "en": "I spot the wave before it hits. People around me see the difference."
+      },
+      "sideEffects": {
+        "fr": "Fatigue émotionnelle les premières séances",
+        "ar": "إرهاق نفسي في الجلسات الأولى",
+        "en": "Emotionally tiring during the first sessions"
+      },
+      "item": "dys_l3"
+    },
+    {
+      "id": "c07",
+      "condition": "endometriosis",
+      "category": "medical",
+      "result": "helped",
+      "age": "25-34",
+      "country": "MA",
+      "avatar": "🦋",
+      "helped": 71,
+      "tried": {
+        "fr": "Traitement hormonal en continu prescrit par ma gynécologue",
+        "ar": "علاج هرموني متواصل وصفته لي طبيبة النساء",
+        "en": "Continuous hormonal treatment prescribed by my gynecologist"
+      },
+      "duration": {
+        "fr": "1 an",
+        "ar": "سنة",
+        "en": "1 year"
+      },
+      "note": {
+        "fr": "Les douleurs ont nettement diminué après 3 mois. J'ai repris le sport.",
+        "ar": "خفّت الآلام بوضوح بعد 3 أشهر. عدت إلى ممارسة الرياضة.",
+        "en": "Pain dropped clearly after 3 months. I am back to exercising."
+      },
+      "sideEffects": {
+        "fr": "Petits saignements et moral en baisse au début",
+        "ar": "نزيف خفيف وانخفاض في المزاج في البداية",
+        "en": "Spotting and lower mood at the beginning"
+      },
+      "item": null
+    },
+    {
+      "id": "c08",
+      "condition": "endometriosis",
+      "category": "medical",
+      "result": "helped",
+      "age": "35-44",
+      "country": "MA",
+      "avatar": "💜",
+      "helped": 54,
+      "tried": {
+        "fr": "Chirurgie par laparoscopie dans un centre habitué à l'endométriose",
+        "ar": "جراحة بالمنظار في مركز له خبرة في بطانة الرحم المهاجرة",
+        "en": "Laparoscopic surgery in a centre experienced with endometriosis"
+      },
+      "duration": {
+        "fr": "6 semaines de récupération",
+        "ar": "6 أسابيع للتعافي",
+        "en": "6 weeks of recovery"
+      },
+      "note": {
+        "fr": "Vraie amélioration. Je garde un suivi régulier car les symptômes peuvent revenir.",
+        "ar": "تحسن حقيقي. أواصل المتابعة المنتظمة لأن الأعراض قد تعود.",
+        "en": "Real improvement. I keep regular follow-up because symptoms can come back."
+      },
+      "sideEffects": {
+        "fr": "Grosse fatigue après l'opération",
+        "ar": "تعب شديد بعد العملية",
+        "en": "Heavy fatigue after the operation"
+      },
+      "item": null
+    },
+    {
+      "id": "c09",
+      "condition": "endometriosis",
+      "category": "medical",
+      "result": "partly",
+      "age": "25-34",
+      "country": "FR",
+      "avatar": "🌙",
+      "helped": 33,
+      "tried": {
+        "fr": "Kinésithérapie pelvienne avec une kiné spécialisée",
+        "ar": "علاج طبيعي للحوض مع أخصائية متمرسة",
+        "en": "Pelvic physiotherapy with a specialised physio"
+      },
+      "duration": {
+        "fr": "5 mois",
+        "ar": "5 أشهر",
+        "en": "5 months"
+      },
+      "note": {
+        "fr": "Moins de douleurs pendant les rapports. Les crampes de règles n'ont pas changé.",
+        "ar": "ألم أقل أثناء العلاقة الحميمة. تقلصات الدورة لم تتغير.",
+        "en": "Less pain during sex. Period cramps did not change."
+      },
+      "sideEffects": {
+        "fr": "Inconfort pendant les premières séances",
+        "ar": "انزعاج في الجلسات الأولى",
+        "en": "Discomfort during the first sessions"
+      },
+      "item": "endo_l4"
+    },
+    {
+      "id": "c10",
+      "condition": "endometriosis",
+      "category": "lifestyle",
+      "result": "partly",
+      "age": "25-34",
+      "country": "TN",
+      "avatar": "🥗",
+      "helped": 22,
+      "tried": {
+        "fr": "Moins de produits ultra-transformés, plus de légumes et de poisson",
+        "ar": "تقليل الأطعمة فائقة التصنيع والإكثار من الخضر والسمك",
+        "en": "Fewer ultra-processed foods, more vegetables and fish"
+      },
+      "duration": {
+        "fr": "4 mois",
+        "ar": "4 أشهر",
+        "en": "4 months"
+      },
+      "note": {
+        "fr": "Moins de ballonnements. La douleur elle-même n'a pas bougé.",
+        "ar": "انتفاخ أقل. أما الألم نفسه فلم يتغير.",
+        "en": "Less bloating. The pain itself has not moved."
+      },
+      "sideEffects": {
+        "fr": "",
+        "ar": "",
+        "en": ""
+      },
+      "item": "endo_l4"
+    },
+    {
+      "id": "c11",
+      "condition": "endometriosis",
+      "category": "medical",
+      "result": "no_change",
+      "age": "18-24",
+      "country": "EG",
+      "avatar": "⏳",
+      "helped": 58,
+      "tried": {
+        "fr": "Antidouleurs seuls pendant des années, sans chercher la cause",
+        "ar": "مسكنات فقط لسنوات دون البحث عن السبب",
+        "en": "Painkillers alone for years, without looking for the cause"
+      },
+      "duration": {
+        "fr": "3 ans",
+        "ar": "3 سنوات",
+        "en": "3 years"
+      },
+      "note": {
+        "fr": "On me disait que c'était normal. Mon seul regret : ne pas avoir insisté plus tôt.",
+        "ar": "كانوا يقولون لي إنه أمر طبيعي. ندمي الوحيد أنني لم أصرّ في وقت أبكر.",
+        "en": "I was told it was normal. My only regret: not insisting sooner."
+      },
+      "sideEffects": {
+        "fr": "Maux d'estomac",
+        "ar": "آلام في المعدة",
+        "en": "Stomach aches"
+      },
+      "item": null
+    },
+    {
+      "id": "c12",
+      "condition": "endometriosis",
+      "category": "support",
+      "result": "helped",
+      "age": "25-34",
+      "country": "MA",
+      "avatar": "🤝",
+      "helped": 45,
+      "tried": {
+        "fr": "Groupe de parole d'une association de patientes",
+        "ar": "مجموعة دعم تابعة لجمعية مريضات",
+        "en": "Support group run by a patient association"
+      },
+      "duration": {
+        "fr": "1 an",
+        "ar": "سنة",
+        "en": "1 year"
+      },
+      "note": {
+        "fr": "Ça ne soigne pas la douleur, mais je ne me sens plus seule et je prépare mieux mes rendez-vous.",
+        "ar": "لا يعالج الألم، لكنني لم أعد أشعر بالوحدة وصرت أحضّر مواعيدي بشكل أفضل.",
+        "en": "It does not treat the pain, but I no longer feel alone and I prepare my appointments better."
+      },
+      "sideEffects": {
+        "fr": "",
+        "ar": "",
+        "en": ""
+      },
+      "item": "endo_l2"
+    },
+    {
+      "id": "c13",
+      "condition": "pcos",
+      "category": "lifestyle",
+      "result": "helped",
+      "age": "25-34",
+      "country": "MA",
+      "avatar": "🌿",
+      "helped": 66,
+      "tried": {
+        "fr": "Trois séances de sport par semaine et suivi avec une diététicienne",
+        "ar": "ثلاث حصص رياضية أسبوعياً ومتابعة مع أخصائية تغذية",
+        "en": "Three workouts a week and follow-up with a dietitian"
+      },
+      "duration": {
+        "fr": "6 mois",
+        "ar": "6 أشهر",
+        "en": "6 months"
+      },
+      "note": {
+        "fr": "Mes cycles sont passés d'environ 60 à 38 jours. Plus d'énergie aussi.",
+        "ar": "انتقلت دوراتي من حوالي 60 يوماً إلى 38. وطاقتي تحسنت أيضاً.",
+        "en": "My cycles went from about 60 to 38 days. More energy too."
+      },
+      "sideEffects": {
+        "fr": "",
+        "ar": "",
+        "en": ""
+      },
+      "item": "pcos_l1"
+    },
+    {
+      "id": "c14",
+      "condition": "pcos",
+      "category": "medical",
+      "result": "helped",
+      "age": "18-24",
+      "country": "DZ",
+      "avatar": "🍃",
+      "helped": 41,
+      "tried": {
+        "fr": "Pilule prescrite par ma gynécologue pour régulariser les cycles et calmer l'acné",
+        "ar": "حبوب وصفتها طبيبة النساء لتنظيم الدورة وتهدئة حب الشباب",
+        "en": "Pill prescribed by my gynecologist to regulate cycles and calm acne"
+      },
+      "duration": {
+        "fr": "9 mois",
+        "ar": "9 أشهر",
+        "en": "9 months"
+      },
+      "note": {
+        "fr": "Règles régulières et peau plus nette au bout de 4 mois.",
+        "ar": "دورة منتظمة وبشرة أصفى بعد 4 أشهر.",
+        "en": "Regular periods and clearer skin after 4 months."
+      },
+      "sideEffects": {
+        "fr": "Nausées et humeur changeante le premier mois",
+        "ar": "غثيان وتقلب في المزاج خلال الشهر الأول",
+        "en": "Nausea and mood changes in the first month"
+      },
+      "item": null
+    },
+    {
+      "id": "c15",
+      "condition": "pcos",
+      "category": "medical",
+      "result": "partly",
+      "age": "25-34",
+      "country": "EG",
+      "avatar": "🧪",
+      "helped": 29,
+      "tried": {
+        "fr": "Traitement prescrit par mon endocrinologue après un bilan sanguin",
+        "ar": "علاج وصفه لي طبيب الغدد بعد تحاليل الدم",
+        "en": "Treatment prescribed by my endocrinologist after blood tests"
+      },
+      "duration": {
+        "fr": "8 mois",
+        "ar": "8 أشهر",
+        "en": "8 months"
+      },
+      "note": {
+        "fr": "Cycles un peu plus réguliers. Pas de changement pour la pilosité.",
+        "ar": "دورات أكثر انتظاماً بقليل. لا تغيير في الشعر الزائد.",
+        "en": "Cycles a bit more regular. No change for the excess hair."
+      },
+      "sideEffects": {
+        "fr": "Troubles digestifs les premières semaines",
+        "ar": "اضطرابات هضمية في الأسابيع الأولى",
+        "en": "Digestive upset in the first weeks"
+      },
+      "item": null
+    },
+    {
+      "id": "c16",
+      "condition": "pcos",
+      "category": "medical",
+      "result": "helped",
+      "age": "25-34",
+      "country": "MA",
+      "avatar": "✨",
+      "helped": 37,
+      "tried": {
+        "fr": "Épilation laser chez une dermatologue pour la pilosité du visage",
+        "ar": "إزالة الشعر بالليزر عند طبيبة جلدية لشعر الوجه",
+        "en": "Laser hair removal with a dermatologist for facial hair"
+      },
+      "duration": {
+        "fr": "8 séances",
+        "ar": "8 جلسات",
+        "en": "8 sessions"
+      },
+      "note": {
+        "fr": "Énorme soulagement au quotidien. C'est cher, et il faut des séances d'entretien.",
+        "ar": "راحة كبيرة في حياتي اليومية. التكلفة مرتفعة وتحتاج جلسات متابعة.",
+        "en": "Huge everyday relief. It is expensive and needs maintenance sessions."
+      },
+      "sideEffects": {
+        "fr": "Rougeurs passagères après chaque séance",
+        "ar": "احمرار مؤقت بعد كل جلسة",
+        "en": "Temporary redness after each session"
+      },
+      "item": "pcos_l3"
+    },
+    {
+      "id": "c17",
+      "condition": "pcos",
+      "category": "lifestyle",
+      "result": "worse",
+      "age": "18-24",
+      "country": "MA",
+      "avatar": "🚫",
+      "helped": 52,
+      "tried": {
+        "fr": "Régime très restrictif trouvé sur les réseaux sociaux",
+        "ar": "حمية قاسية جداً وجدتها على مواقع التواصل",
+        "en": "Very restrictive diet found on social media"
+      },
+      "duration": {
+        "fr": "2 mois",
+        "ar": "شهران",
+        "en": "2 months"
+      },
+      "note": {
+        "fr": "Épuisée, obsédée par la nourriture, et toujours pas de règles. J'ai arrêté et consulté.",
+        "ar": "إرهاق شديد وهوس بالأكل، والدورة ما زالت غائبة. توقفت واستشرت طبيباً.",
+        "en": "Exhausted, obsessed with food, and still no period. I stopped and saw a doctor."
+      },
+      "sideEffects": {
+        "fr": "Fatigue, vertiges, fringales",
+        "ar": "تعب ودوخة ونوبات جوع",
+        "en": "Fatigue, dizziness, cravings"
+      },
+      "item": null
+    },
+    {
+      "id": "c18",
+      "condition": "pcos",
+      "category": "support",
+      "result": "helped",
+      "age": "25-34",
+      "country": "TN",
+      "avatar": "💬",
+      "helped": 24,
+      "tried": {
+        "fr": "Accompagnement psychologique autour de l'image de soi",
+        "ar": "مرافقة نفسية حول صورة الذات",
+        "en": "Counselling focused on body image"
+      },
+      "duration": {
+        "fr": "5 mois",
+        "ar": "5 أشهر",
+        "en": "5 months"
+      },
+      "note": {
+        "fr": "Mon corps n'a pas changé, mais mon regard sur lui, oui. Ça compte énormément.",
+        "ar": "جسمي لم يتغير، لكن نظرتي إليه تغيرت. وهذا يعني الكثير.",
+        "en": "My body has not changed, but the way I see it has. That matters a lot."
+      },
+      "sideEffects": {
+        "fr": "",
+        "ar": "",
+        "en": ""
+      },
+      "item": "pcos_l2"
+    }
+  ]
+}
