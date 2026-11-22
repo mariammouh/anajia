@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Anajia (صحتي) — women's health companion · hackathon prototype
+   Anajia (الناجية) — women's health companion · hackathon prototype
    Vanilla JS, no build step, no backend. Everything stays in localStorage.
 
    1 helpers & i18n   2 state        3 dates        4 scoring engine
@@ -474,7 +474,7 @@
     return `
       <button class="brand" data-action="go" data-view="home" aria-label="Anajia">
         <span class="brand-logo">${mascot('good')}</span>
-        <span class="brand-name">Anajia <span class="brand-ar" lang="ar">صحتي</span></span>
+        <span class="brand-name">Anajia <span class="brand-ar" lang="ar">الناجية</span></span>
       </button>
       <div class="topbar-actions">
         <div class="lang-switch" role="group" aria-label="${esc(t('common.language'))}">

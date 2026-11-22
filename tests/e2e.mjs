@@ -154,6 +154,7 @@ try {
   await shot('03-onboarding-cycle');
   await click('[data-action="onb-finish"]');
   check('onboarding completes to Home', await ev('Anajia.state.profile.onboarded && document.querySelector("#app").dataset.view === "home"'));
+  check('header uses the Anajia brand in English and Arabic', await ev('document.querySelector(".brand-name").textContent.includes("Anajia") && document.querySelector(".brand-ar").textContent === "الناجية"'));
   check('nickname and cycle saved', await ev('Anajia.state.profile.nickname === "Yasmine" && Anajia.state.profile.cycleLength === 29 && Anajia.state.profile.periodStarts.length === 1'));
   check('home greets by nickname and shows cycle day 11', (await text('.bubble h1')).includes('Yasmine') && (await text('.ring-center strong')) === '11', await text('.ring-center strong'));
   check('data persisted in localStorage', await ev('JSON.parse(localStorage.getItem("anajia.v1")).profile.nickname === "Yasmine"'));
